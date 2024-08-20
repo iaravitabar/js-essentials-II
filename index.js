@@ -169,8 +169,21 @@ console.log(combinedHobbies(persons))
 //   ];
 
 //printChemicalInfo(chemicals)
-function printChemicalInfo(chemicals){
 
+// padEnd() pads un string con otro string al final, muchas veces hasta que llega a la cantidad (x).
+function printChemicalInfo(chemicals){
+    chemicals.forEach(chemicals=> {
+        console.log("+-------------------------------------------------------+");
+        console.log(`| Compound ID: ${chemicals.compoundId.padEnd(45)}|`);
+        console.log(`| Name: ${chemicals.name.padEnd(48)}|`);
+        console.log(`| Formula: ${chemicals.formula.padEnd(45)}|`);
+        console.log(`| Description: ${chemicals.description.padEnd(49)}|`);
+        console.log(`| Molecular Weight: ${chemicals.molecularWeight.padEnd(35)}|`);
+        console.log(`| Melting Point: ${chemicals.meltingPoint.padEnd(42)}|`);
+        console.log(`| Boiling Point: ${chemicals.boilingPoint.padEnd(42)}|`);
+        console.log(`| Solubility: ${chemicals.solubility.padEnd(44)}|`);
+        console.log("+-------------------------------------------------------+");
+    });
 }
 const chemicals = [
         {
@@ -204,6 +217,7 @@ const chemicals = [
           solubility: 'Miscible with water'
         }
       ];
+printChemicalInfo(chemicals);   
 
 //Expected output
 // +-------------------------------------------------------+
