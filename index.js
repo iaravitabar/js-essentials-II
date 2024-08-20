@@ -243,8 +243,8 @@ const chemicals = [
 // 09 - function getGetUniqueGuestList(guestList)
 // const guestList = ['Alice 🙆🏻‍♀️', 'Bob 🙍🏼', 'Charlie 👨🏼‍🚀', 'Alice 🙆🏻‍♀️', 'David 🤵🏿‍♂️'];
 function getGetUniqueGuestList(guestList){
-    return guestList.filter((item,
-        index) => guestList.indexOf(item) === index);
+    const sinDup = new Set (guestList);
+    return sinDup
 }
 const guestList = ['Alice 🙆🏻‍♀️', 'Bob 🙍🏼', 'Charlie 👨🏼‍🚀', 'Alice 🙆🏻‍♀️', 'David 🤵🏿‍♂️'];
 console.log(getGetUniqueGuestList(guestList));
