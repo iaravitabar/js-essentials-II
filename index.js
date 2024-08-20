@@ -359,37 +359,45 @@ getTopFiveWorstPlayers(leaderBoard2);
 // NOTE: ⚠️ original array shouldn't be modified. or we are missing players.
 
 // 13 - function safeCopy()
-// const companyHierarchy = {
-//     name: 'Company',
-//     departments: [
-//       {
-//         name: 'Engineering',
-//         head: 'Alice',
-//         subDepartments: [
-//           {
-//             name: 'Backend',
-//             head: 'Bob',
-//             employees: ['Charlie', 'David']
-//           },
-//           {
-//             name: 'Frontend',
-//             head: 'Eve',
-//             employees: ['Frank', 'Grace']
-//           }
-//         ]
-//       },
-//       {
-//         name: 'Sales',
-//         head: 'Henry',
-//         employees: ['Isaac', 'Jane']
-//       }
-//     ]
-//   };
-
-// Deep copy function
-// function safeCopy(obj) {
-//      ToDo (complete the function here...)
-//  }
+function safeCopy(companyHierarchy){
+  const originalHierarchy = {
+        name: 'Company',
+        departments: [
+          {
+            name: 'Engineering',
+            head: 'Alice',
+            subDepartments: [
+              {
+                name: 'Backend',
+                head: 'Bob',
+                employees: ['Charlie', 'David']
+              },
+              {
+                name: 'Frontend',
+                head: 'Eve',
+                employees: ['Frank', 'Grace']
+              }
+            ]
+          },
+          {
+            name: 'Sales',
+            head: 'Henry',
+            employees: ['Isaac', 'Jane']
+          }
+        ]
+      };
+  const clonedHierarchy = JSON.parse(JSON.stringify(originalHierarchy));
+  clonedHierarchy.departments.push({
+        name: 'Marketing',
+        head: 'Karen',
+        employees: ['Liam', 'Mia']
+      });
+      console.log('Original Company Hierarchy:');
+      console.log(originalHierarchy);
+      console.log('Copied Company Hierarchy with Modifications:');
+      console.log(clonedHierarchy);
+}
+safeCopy();
 
 //   // Example usage
 //   const copiedHierarchy = safeCopy(companyHierarchy);
